@@ -1,0 +1,16 @@
+{
+  "name": "askit",
+  "type": "module",
+  "scripts": {
+    "dev": "dotenv -e .env tsx watch ./api/index.ts"
+  },
+  "dependencies": {
+    "@slack/bolt": "^3.14.0",
+    "openai": "^4.17.4"
+  },
+  "devDependencies": {
+    "dotenv-cli": "^7.3.0",
+    "tsx": "^4.1.1",
+    "typescript": "^5.2.2"
+  }
+}
