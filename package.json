@@ -1,20 +1,13 @@
 {
   "name": "askit",
   "version": "0.0.0",
-  "scripts": {
-    "dev": "dotenv -e .env tsx watch ./src/askit.ts",
-    "build": "tsc",
-    "start": "dotenv -e .env pm2 start ./dist/askit.js",
-    "stop": "pm2 stop askit"
-  },
   "dependencies": {
-    "@slack/bolt": "^3.14.0",
-    "openai": "^4.17.4",
-    "pm2": "^5.3.0"
+    "openai": "^4.17.4"
   },
   "devDependencies": {
-    "@slack/web-api": "^6.9.1",
+    "@slack/web-api": "^6.11.1",
     "@types/node": "^20.9.0",
+    "@vercel/node": "^3.0.15",
     "dotenv-cli": "^7.3.0",
     "tsx": "^4.1.1",
     "typescript": "^5.2.2"
