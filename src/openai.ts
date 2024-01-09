@@ -1,13 +1,16 @@
-import OpenAI from 'openai'
 import type { ChatCompletionMessageParam } from 'openai/resources'
 import type { ConversationsRepliesResponse } from '@slack/web-api'
+import OpenAI from 'openai'
+import { defaultQuery } from './utils'
 
 const openai = new OpenAI() // process.env.OPENAI_API_KEY
 
 export async function getGPTResponse(prompt: ChatCompletionMessageParam[]) {
+  const messages = [...prompt, defaultQuery as ChatCompletionMessageParam]
+
   return await openai.chat.completions.create({
     model: 'gpt-4',
-    messages: prompt,
+    messages,
   })
 }
 
