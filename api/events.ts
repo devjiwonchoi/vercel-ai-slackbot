@@ -6,18 +6,14 @@ export default async function (
   request: VercelRequest,
   response: VercelResponse
 ) {
-  const {
-    challenge,
-    type: requestType,
-    event: { type: eventType },
-  } = request.body
-
+  const requestType = request.body.type
   if (requestType === 'url_verification') {
-    return response.status(200).json({ challenge })
+    return response.status(200).json({ challenge: request.body.challenge })
   }
 
   if (isValidSlackRequest(request)) {
     if (requestType === 'event_callback') {
+      const eventType = request.body.event.type
       if (eventType === 'app_mention') {
         await sendGPTResponse(request)
         return response
