@@ -16,7 +16,7 @@ export default async function events(
     if (requestType === 'event_callback') {
       const eventType = request.body.event.type
       if (eventType === 'app_mention') {
-        chat(request)
+        await chat(request)
       }
     }
   }
