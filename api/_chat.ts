@@ -4,7 +4,7 @@ import { getGPTResponse, generatePromptFromThread } from './_openai'
 
 const slack = new WebClient(process.env.SLACK_BOT_TOKEN)
 
-export default async function _chat(request: VercelRequest) {
+export default async function chat(request: VercelRequest) {
   const { channel, ts, thread_ts } = request.body.event
   try {
     const thread = await slack.conversations.replies({

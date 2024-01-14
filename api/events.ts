@@ -20,4 +20,6 @@ export default async function events(
       }
     }
   }
+
+  return
 }
