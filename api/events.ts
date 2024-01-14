@@ -20,9 +20,12 @@ export default async function events(
     if (requestType === 'event_callback') {
       if (eventType === 'app_mention') {
         await sendGPTResponse(request)
+        return response
+          .status(200)
+          .json({ message: 'Successfully sent GPT Response!' })
       }
     }
   }
 
-  return
+  return response.status(200).json({ message: 'Hello World!' })
 }
