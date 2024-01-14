@@ -1,7 +1,7 @@
 import type { ChatCompletionMessageParam } from 'openai/resources'
 import type { ConversationsRepliesResponse } from '@slack/web-api'
 import OpenAI from 'openai'
-import { defaultQuery } from './utils'
+import { defaultQuery } from './_utils'
 
 const openai = new OpenAI() // process.env.OPENAI_API_KEY
 
