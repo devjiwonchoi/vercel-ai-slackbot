@@ -26,7 +26,7 @@ export async function sendGPTResponse(request: VercelRequest) {
       await slack.chat.postMessage({
         channel,
         thread_ts: ts,
-        text: `<@${process.env.ADMIN_USER_ID}> Error: ${error.message}`,
+        text: `<@${process.env.SLACK_ADMIN_MEMBER_ID}> Error: ${error.message}`,
       })
     }
   }
