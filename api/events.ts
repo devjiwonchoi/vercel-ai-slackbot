@@ -2,7 +2,7 @@ import type { VercelRequest, VercelResponse } from '@vercel/node'
 import { sendGPTResponse } from './_chat'
 import { isValidSlackRequest } from './_validate-request'
 
-export default async function events(
+export default async function (
   request: VercelRequest,
   response: VercelResponse
 ) {
@@ -27,5 +27,5 @@ export default async function events(
     }
   }
 
-  return response.status(200).json({ message: 'Hello World!' })
+  return response.status(200).json({ message: 'OK' })
 }
