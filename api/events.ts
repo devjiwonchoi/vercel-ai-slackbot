@@ -4,7 +4,7 @@ import { getGPTResponse, generatePromptFromThread } from '../src/openai'
 
 const { client } = new Slack({
   token: process.env.SLACK_BOT_TOKEN,
-  appToken: process.env.SLACK_APP_TOKEN,
+  signingSecret: process.env.SLACK_SIGNING_SECRET,
 })
 
 export default async function events(
