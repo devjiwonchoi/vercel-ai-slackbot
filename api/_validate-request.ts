@@ -1,4 +1,4 @@
-// This code snippet is based on https://github.com/devjiwonchoi/vercel-slackbot/blob/main/api/_validate.js
+// This code snippet is based on https://github.com/vercel/examples/blob/main/solutions/slackbot/api/_validate.js
 // To know more about validating requests from Slack, check out https://api.slack.com/authentication/verifying-requests-from-slack
 import crypto from 'crypto'
 const signingSecret = process.env.SLACK_SIGNING_SECRET!
