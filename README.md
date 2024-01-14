@@ -1,5 +1,9 @@
 # Vercel AI Slack Bot
 
+![Screenshot of usage of this project](https://github.com/devjiwonchoi/vercel-ai-slackbot/assets/120007119/eb71cacc-573c-43e5-9cb3-089850957dd6)
+
+> Note: The bot name and icon customizable at your [Slack Apps](https://api.slack.com/apps).
+
 ## Getting Started
 
 ### Deploy on Vercel
