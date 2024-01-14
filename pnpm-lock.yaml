@@ -6,22 +6,22 @@ settings:
 
 dependencies:
   '@slack/web-api':
-    specifier: ^6.11.1
-    version: 6.11.1
+    specifier: ^6.11.2
+    version: 6.11.2
   openai:
-    specifier: ^4.17.4
-    version: 4.17.4
+    specifier: ^4.24.7
+    version: 4.24.7
 
 devDependencies:
   '@types/node':
-    specifier: ^20.9.0
-    version: 20.9.0
+    specifier: ^20.11.0
+    version: 20.11.0
   '@vercel/node':
-    specifier: ^3.0.15
-    version: 3.0.15
+    specifier: ^3.0.16
+    version: 3.0.16
   typescript:
-    specifier: ^5.2.2
-    version: 5.2.2
+    specifier: ^5.3.3
+    version: 5.3.3
 
 packages:
 
@@ -94,7 +94,7 @@ packages:
       detect-libc: 2.0.2
       https-proxy-agent: 5.0.1
       make-dir: 3.1.0
-      node-fetch: 2.7.0
+      node-fetch: 2.6.9
       nopt: 5.0.0
       npmlog: 5.0.1
       rimraf: 3.0.2
@@ -138,7 +138,7 @@ packages:
     resolution: {integrity: sha512-DTuBFbqu4gGfajREEMrkq5jBhcnskinhr4+AnfJEk48zhVeEv3XnUKGIX98B74kxhYsIMfApGGySTn7V3b5yBA==}
     engines: {node: '>= 12.13.0', npm: '>= 6.12.0'}
     dependencies:
-      '@types/node': 20.9.0
+      '@types/node': 20.11.0
     dev: false
 
   /@slack/types@2.11.0:
@@ -146,14 +146,14 @@ packages:
     engines: {node: '>= 12.13.0', npm: '>= 6.12.0'}
     dev: false
 
-  /@slack/web-api@6.11.1:
-    resolution: {integrity: sha512-AU7Sty+NwkMU0qT/cKSIYV1NZ+bGDYqmJ3LAJD/3vtrxJvV9F9DdALgRSV2zRhrRjzjOgLhCRXVuOikQsKQhAg==}
+  /@slack/web-api@6.11.2:
+    resolution: {integrity: sha512-s4qCQGXasr8jpCf/+6+V/smq+Z2RX7EIBnJeO/xe7Luie1nyBihFMgjICNyvzWoWBdaGntSnn5CcZdFm4ItBWg==}
     engines: {node: '>= 12.13.0', npm: '>= 6.12.0'}
     dependencies:
       '@slack/logger': 3.0.0
       '@slack/types': 2.11.0
       '@types/is-stream': 1.1.0
-      '@types/node': 20.9.0
+      '@types/node': 20.11.0
       axios: 1.6.5
       eventemitter3: 3.1.2
       form-data: 2.5.1
@@ -193,17 +193,17 @@ packages:
   /@types/is-stream@1.1.0:
     resolution: {integrity: sha512-jkZatu4QVbR60mpIzjINmtS1ZF4a/FqdTUTBeQDVOQ2PYyidtwFKr0B5G6ERukKwliq+7mIXvxyppwzG5EgRYg==}
     dependencies:
-      '@types/node': 20.9.0
+      '@types/node': 20.11.0
     dev: false
 
   /@types/json-schema@7.0.15:
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
     dev: true
 
-  /@types/node-fetch@2.6.9:
-    resolution: {integrity: sha512-bQVlnMLFJ2d35DkPNjEPmd9ueO/rh5EiaZt2bhqiSarPjZIuIV6bPQVqcrEyvNo+AfTrRGVazle1tl597w3gfA==}
+  /@types/node-fetch@2.6.10:
+    resolution: {integrity: sha512-PPpPK6F9ALFTn59Ka3BaL+qGuipRfxNE8qVgkp0bVixeiR2c2/L+IVOiBdu9JhhT22sWnQEp6YyHGI2b2+CMcA==}
     dependencies:
-      '@types/node': 20.9.0
+      '@types/node': 20.11.0
       form-data: 4.0.0
     dev: false
 
@@ -211,14 +211,14 @@ packages:
     resolution: {integrity: sha512-qelS/Ra6sacc4loe/3MSjXNL1dNQ/GjxNHVzuChwMfmk7HuycRLVQN2qNY3XahK+fZc5E2szqQSKUyAF0E+2bg==}
     dev: true
 
-  /@types/node@18.18.9:
-    resolution: {integrity: sha512-0f5klcuImLnG4Qreu9hPj/rEfFq6YRc5n2mAjSsH+ec/mJL+3voBH0+8T7o8RpFjH7ovc+TRsL/c7OYIQsPTfQ==}
+  /@types/node@18.19.6:
+    resolution: {integrity: sha512-X36s5CXMrrJOs2lQCdDF68apW4Rfx9ixYMawlepwmE4Anezv/AV2LSpKD1Ub8DAc+urp5bk0BGZ6NtmBitfnsg==}
     dependencies:
       undici-types: 5.26.5
     dev: false
 
-  /@types/node@20.9.0:
-    resolution: {integrity: sha512-nekiGu2NDb1BcVofVcEKMIwzlx4NjHlcjhoxxKBNLtz15Y1z7MYf549DFvkHSId02Ax6kGwWntIBPC3l/JZcmw==}
+  /@types/node@20.11.0:
+    resolution: {integrity: sha512-o9bjXmDNcF7GbM4CNQpmi+TutCgap/K3w1JyKgxAjqx41zp9qlIAVFi0IhCNsJcXolEqLWhbFbEeL0PvYm4pcQ==}
     dependencies:
       undici-types: 5.26.5
 
@@ -226,8 +226,8 @@ packages:
     resolution: {integrity: sha512-wWKOClTTiizcZhXnPY4wikVAwmdYHp8q6DmC+EJUzAMsycb7HB32Kh9RN4+0gExjmPmZSAQjgURXIGATPegAvA==}
     dev: false
 
-  /@vercel/build-utils@7.4.1:
-    resolution: {integrity: sha512-Tg35Zl3r68h/Tg4TVb+gIVUKGsL5XVbtSI7gUYNZyq/811CVX7zlCV5ZHAmEkG7J5+nBoaUJc/eoYP6HkzcNIg==}
+  /@vercel/build-utils@7.5.0:
+    resolution: {integrity: sha512-+ldlSw9M4ef+XmBpo+YSHWcmcUotJIp0+UQDnROjqywyOe98lH+K78uqsHdiMqYSwnjh2N47YaEsXzOTUFqryQ==}
     dev: true
 
   /@vercel/error-utils@2.0.2:
@@ -256,14 +256,14 @@ packages:
       - supports-color
     dev: true
 
-  /@vercel/node@3.0.15:
-    resolution: {integrity: sha512-jdds+p+RkTY0ji2eGOxsZcHHQi/cx04QX4xl0fnY2oBq3LvGYKyw3oWzvrzgxTBaK+zK5MbrmjsvoikJBRR0Hw==}
+  /@vercel/node@3.0.16:
+    resolution: {integrity: sha512-pSpW4w5sOU9QIk7SPRJTRI1rqh4Mnss/4Sn0vNqi+nS6C17k6470c4x5Wc+4an5Vb/Iib/o8MjVQh9WQZj6PVA==}
     dependencies:
       '@edge-runtime/node-utils': 2.2.1
       '@edge-runtime/primitives': 4.0.5
       '@edge-runtime/vm': 3.1.7
       '@types/node': 14.18.33
-      '@vercel/build-utils': 7.4.1
+      '@vercel/build-utils': 7.5.0
       '@vercel/error-utils': 2.0.2
       '@vercel/nft': 0.26.2
       '@vercel/static-config': 3.0.0
@@ -311,8 +311,8 @@ packages:
       acorn: 8.11.3
     dev: true
 
-  /acorn-walk@8.3.1:
-    resolution: {integrity: sha512-TgUZgYvqZprrl7YldZNoa9OciCAyZR+Ejm9eXzKCmjsF5IKp/wgQ7Z/ZpjpGTIUPwrHQIcYeI8qDh4PsEwxMbw==}
+  /acorn-walk@8.3.2:
+    resolution: {integrity: sha512-cjkyv4OtNCIeqhHrfS81QWXoCBPExR/J62oyEqepVw8WaQeSqpW2uhuLPh1m9eWhDuOo/jUXVTlifvesOWp/4A==}
     engines: {node: '>=0.4.0'}
     dev: true
 
@@ -389,7 +389,7 @@ packages:
   /axios@1.6.5:
     resolution: {integrity: sha512-Ii012v05KEVuUoFWmMW/UQv9aRIc3ZwkWDcM+h5Il8izZCtRVpDUfwpoFf7eOtajT3QiGR4yDUx7lPqHJULgbg==}
     dependencies:
-      follow-redirects: 1.15.4
+      follow-redirects: 1.15.5
       form-data: 4.0.0
       proxy-from-env: 1.1.0
     transitivePeerDependencies:
@@ -790,8 +790,8 @@ packages:
       to-regex-range: 5.0.1
     dev: true
 
-  /follow-redirects@1.15.4:
-    resolution: {integrity: sha512-Cr4D/5wlrb0z9dgERpUL3LrmPKVDsETIJhaCMeDfuFYcqa5bldGV6wBsAN6X/vxlXQtFBMrXdXxdL8CbDTGniw==}
+  /follow-redirects@1.15.5:
+    resolution: {integrity: sha512-vSFWUON1B+yAw1VN4xMfxgn5fTUiaOzAJCKBwIIgT/+7CuGy9+r+5gITvP62j3RmaD5Ph65UaERdOSRGUzZtgw==}
     engines: {node: '>=4.0'}
     peerDependencies:
       debug: '*'
@@ -1078,6 +1078,7 @@ packages:
         optional: true
     dependencies:
       whatwg-url: 5.0.0
+    dev: false
 
   /node-gyp-build@4.8.0:
     resolution: {integrity: sha512-u6fs2AEUljNho3EYTJNBfImO5QTo/J/1Etd+NVdCj7qWKUSN/bSLkZwhDv7I+w/MSC6qJ4cknepkAYykDdK8og==}
@@ -1112,19 +1113,19 @@ packages:
       wrappy: 1.0.2
     dev: true
 
-  /openai@4.17.4:
-    resolution: {integrity: sha512-ThRFkl6snLbcAKS58St7N3CaKuI5WdYUvIjPvf4s+8SdymgNtOfzmZcZXVcCefx04oKFnvZJvIcTh3eAFUUhAQ==}
+  /openai@4.24.7:
+    resolution: {integrity: sha512-JUesECWPtsDHO0TlZGb6q73hnAmXUdzj9NrwgZeL4lqlRt/kR1sWrXoy8LocxN/6uOtitywvcJqe0O1PLkG45g==}
     hasBin: true
     dependencies:
-      '@types/node': 18.18.9
-      '@types/node-fetch': 2.6.9
+      '@types/node': 18.19.6
+      '@types/node-fetch': 2.6.10
       abort-controller: 3.0.0
       agentkeepalive: 4.5.0
       digest-fetch: 1.3.0
       form-data-encoder: 1.7.2
       formdata-node: 4.4.1
       node-fetch: 2.7.0
-      web-streams-polyfill: 3.2.1
+      web-streams-polyfill: 3.3.2
     transitivePeerDependencies:
       - encoding
     dev: false
@@ -1355,7 +1356,7 @@ packages:
       '@tsconfig/node16': 1.0.4
       '@types/node': 14.18.33
       acorn: 8.11.3
-      acorn-walk: 8.3.1
+      acorn-walk: 8.3.2
       arg: 4.1.3
       create-require: 1.1.1
       diff: 4.0.2
@@ -1375,8 +1376,8 @@ packages:
     hasBin: true
     dev: true
 
-  /typescript@5.2.2:
-    resolution: {integrity: sha512-mI4WrpHsbCIcwT9cF4FZvr80QUeKvsUsUvKDoR+X/7XHQH98xYD8YHZg7ANtz2GtZt/CBq2QJ0thkGJMHfqc1w==}
+  /typescript@5.3.3:
+    resolution: {integrity: sha512-pXWcraxM0uxAS+tN0AG/BF2TyqmHO014Z070UsJ+pFvYuRSq8KH8DmWpnbXe0pEPDHXZV3FcAbJkijJ5oNEnWw==}
     engines: {node: '>=14.17'}
     hasBin: true
     dev: true
@@ -1405,8 +1406,8 @@ packages:
     resolution: {integrity: sha512-wa7YjyUGfNZngI/vtK0UHAN+lgDCxBPCylVXGp0zu59Fz5aiGtNXaq3DhIov063MorB+VfufLh3JlF2KdTK3xg==}
     dev: true
 
-  /web-streams-polyfill@3.2.1:
-    resolution: {integrity: sha512-e0MO3wdXWKrLbL0DgGnUV7WHVuw9OUvL4hjgnPkIeEvESk74gAITi5G606JtZPp39cd8HA9VQzCIvA49LpPN5Q==}
+  /web-streams-polyfill@3.3.2:
+    resolution: {integrity: sha512-3pRGuxRF5gpuZc0W+EpwQRmCD7gRqcDOMt688KmdlDAgAyaB1XlN0zq2njfDNm44XVdIouE7pZ6GzbdyH47uIQ==}
     engines: {node: '>= 8'}
     dev: false
 
