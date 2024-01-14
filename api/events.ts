@@ -1,11 +1,16 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node'
 import { App as Slack } from '@slack/bolt'
+import { WebClient } from '@slack/web-api'
 import { getGPTResponse, generatePromptFromThread } from '../src/openai'
 
 const { client } = new Slack({
+  // To deploy on Vercel, we cannot use the socketMode or its event listening features.
+  // Therefore, siginingSecret is required over appToken.
   token: process.env.SLACK_BOT_TOKEN,
   signingSecret: process.env.SLACK_SIGNING_SECRET,
 })
+
+const slack = new WebClient(process.env.SLACK_BOT_TOKEN)
 
 export default async function events(
   request: VercelRequest,
@@ -22,7 +27,7 @@ export default async function events(
       const eventType = request.body.event.type
       if (eventType === 'app_mention') {
         const { channel, ts, thread_ts } = request.body.event
-        const thread = await client.conversations.replies({
+        const thread = await slack.conversations.replies({
           channel,
           ts: thread_ts ?? ts,
           inclusive: true,
@@ -31,7 +36,7 @@ export default async function events(
         const prompt = await generatePromptFromThread(thread)
         const gptResponse = await getGPTResponse(prompt)
 
-        await client.chat.postMessage({
+        await slack.chat.postMessage({
           channel,
           thread_ts: ts,
           text: `${gptResponse.choices[0].message.content}`,
