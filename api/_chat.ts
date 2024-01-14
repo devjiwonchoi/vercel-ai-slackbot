@@ -13,8 +13,8 @@ export async function sendGPTResponse(request: VercelRequest) {
       inclusive: true,
     })
 
-    const prompt = await generatePromptFromThread(thread)
-    const gptResponse = await getGPTResponse(prompt)
+    const prompts = await generatePromptFromThread(thread)
+    const gptResponse = await getGPTResponse(prompts)
 
     await slack.chat.postMessage({
       channel,
