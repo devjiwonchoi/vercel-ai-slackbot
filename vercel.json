@@ -2,7 +2,7 @@
   "redirects": [
     {
       "source": "/",
-      "destination": "https://vercel.com/new/clone?repository-url=https://github.com/devjiwonchoi/vercel-ai-slackbot&env=OPENAI_API_KEY,SLACK_BOT_TOKEN,SLACK_SIGNING_SECRET,SLACK_ADMIN_MEMBER_ID"
+      "destination": "https://vercel.com/new/clone?repository-url=https://github.com/devjiwonchoi/vercel-ai-slackbot&env=OPENAI_API_KEY,SLACK_BOT_TOKEN,SLACK_SIGNING_SECRET"
     }
   ]
 }
