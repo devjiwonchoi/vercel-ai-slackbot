@@ -1,27 +1,24 @@
-import type { VercelRequest, VercelResponse } from '@vercel/node'
 import { sendGPTResponse } from './_chat'
 import { isValidSlackRequest } from './_validate-request'
 
-export default async function (
-  request: VercelRequest,
-  response: VercelResponse
-) {
-  const requestType = request.body.type
+export async function POST(request: Request) {
+  const body = await request.json()
+  const requestType = body.type
+
+  // See https://api.slack.com/events/url_verification
   if (requestType === 'url_verification') {
-    return response.status(200).json({ challenge: request.body.challenge })
+    return new Response(body.challenge, { status: 200 })
   }
 
-  if (isValidSlackRequest(request)) {
+  if (await isValidSlackRequest(request)) {
     if (requestType === 'event_callback') {
-      const eventType = request.body.event.type
+      const eventType = body.event.type
       if (eventType === 'app_mention') {
-        await sendGPTResponse(request)
-        return response
-          .status(200)
-          .json({ message: 'Successfully sent GPT Response!' })
+        await sendGPTResponse(body.event)
+        return new Response('Success!', { status: 200 })
       }
     }
   }
 
-  return response.status(200).json({ message: 'OK' })
+  return new Response('Unauthorized', { status: 401 })
 }
