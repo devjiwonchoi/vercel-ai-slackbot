@@ -10,7 +10,7 @@ export async function POST(request: Request) {
     return new Response(payload.challenge, { status: 200 })
   }
 
-  if (await isValidSlackRequest(request, payload)) {
+  if (await isValidSlackRequest({ request, payload })) {
     if (requestType === 'event_callback') {
       const eventType = payload.event.type
       if (eventType === 'app_mention') {
@@ -18,7 +18,6 @@ export async function POST(request: Request) {
         return new Response('Success!', { status: 200 })
       }
     }
-    return new Response('Unhandled event type', { status: 200 })
   }
 
   return new Response('Unauthorized', { status: 401 })
