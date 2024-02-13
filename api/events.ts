@@ -10,16 +10,16 @@ export async function POST(request: Request) {
     return new Response(body.challenge, { status: 200 })
   }
 
-  if (await isValidSlackRequest(request)) {
-    if (requestType === 'event_callback') {
-      const eventType = body.event.type
-      if (eventType === 'app_mention') {
-        await sendGPTResponse(body.event)
-        return new Response('Success!', { status: 200 })
-      }
+  // if (await isValidSlackRequest(request)) {
+  if (requestType === 'event_callback') {
+    const eventType = body.event.type
+    if (eventType === 'app_mention') {
+      await sendGPTResponse(body.event)
+      return new Response('Success!', { status: 200 })
     }
-    return new Response('Unhandled event type', { status: 200 })
   }
+  return new Response('Unhandled event type', { status: 200 })
+  // }
 
   return new Response('Unauthorized', { status: 401 })
 }
