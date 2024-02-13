@@ -2,7 +2,8 @@ import type { ChatCompletionMessageParam } from 'openai/resources'
 import type { ConversationsRepliesResponse } from '@slack/web-api'
 import OpenAI from 'openai'
 
-const openai = new OpenAI() // process.env.OPENAI_API_KEY by default
+// process.env.OPENAI_API_KEY by default
+const openai = new OpenAI()
 
 export async function getGPTResponse(messages: ChatCompletionMessageParam[]) {
   return await openai.chat.completions.create({

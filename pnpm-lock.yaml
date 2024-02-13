@@ -16,9 +16,6 @@ devDependencies:
   '@types/node':
     specifier: ^20.11.0
     version: 20.11.0
-  '@vercel/node':
-    specifier: ^3.0.16
-    version: 3.0.16
   typescript:
     specifier: ^5.3.3
     version: 5.3.3
