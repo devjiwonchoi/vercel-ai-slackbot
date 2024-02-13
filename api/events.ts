@@ -18,6 +18,7 @@ export async function POST(request: Request) {
         return new Response('Success!', { status: 200 })
       }
     }
+    return new Response('Unhandled event type', { status: 200 })
   }
 
   return new Response('Unauthorized', { status: 401 })
