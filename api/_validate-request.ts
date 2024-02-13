@@ -7,7 +7,7 @@ export async function isValidSlackRequest(request: Request) {
   const timestamp = request.headers.get('X-Slack-Request-Timestamp')
   const slackSignature = request.headers.get('X-Slack-Signature')
 
-  const base = `v0:${timestamp}:${JSON.stringify(request.body)}`
+  const base = `v0:${timestamp}:${await request.text()}`
   const hmac = crypto
     .createHmac('sha256', signingSecret)
     .update(base)
