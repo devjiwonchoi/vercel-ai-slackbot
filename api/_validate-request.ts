@@ -1,22 +1,18 @@
-// This code snippet is based on https://github.com/vercel/examples/blob/main/solutions/slackbot/api/_validate.js
-// To know more about validating requests from Slack, check out https://api.slack.com/authentication/verifying-requests-from-slack
 import crypto from 'crypto'
+
 const signingSecret = process.env.SLACK_SIGNING_SECRET!
 
-export function isValidSlackRequest(event: any) {
-  const { body, headers } = event
-  const requestBody = JSON.stringify(body)
+// See https://api.slack.com/authentication/verifying-requests-from-slack
+export async function isValidSlackRequest(request: Request) {
+  const timestamp = request.headers.get('X-Slack-Request-Timestamp')
+  const slackSignature = request.headers.get('X-Slack-Signature')
 
-  const timestamp = headers['x-slack-request-timestamp']
-  const slackSignature = headers['x-slack-signature']
-  const baseString = 'v0:' + timestamp + ':' + requestBody
-
+  const base = `v0:${timestamp}:${JSON.stringify(request.body)}`
   const hmac = crypto
     .createHmac('sha256', signingSecret)
-    .update(baseString)
+    .update(base)
     .digest('hex')
-  const computedSlackSignature = 'v0=' + hmac
-  const isValidRequest = computedSlackSignature === slackSignature
+  const computedSignature = `v0=${hmac}`
 
-  return isValidRequest
+  return computedSignature === slackSignature
 }
