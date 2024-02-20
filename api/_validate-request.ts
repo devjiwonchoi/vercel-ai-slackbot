@@ -5,10 +5,10 @@ const signingSecret = process.env.SLACK_SIGNING_SECRET!
 // See https://api.slack.com/authentication/verifying-requests-from-slack
 export async function isValidSlackRequest({
   request,
-  payload,
+  rawBody,
 }: {
   request: Request
-  payload: any
+  rawBody: any
 }) {
   const timestamp = request.headers.get('X-Slack-Request-Timestamp')
   const slackSignature = request.headers.get('X-Slack-Signature')
@@ -22,7 +22,7 @@ export async function isValidSlackRequest({
     return false
   }
 
-  const base = `v0:${timestamp}:${JSON.stringify(payload)}`
+  const base = `v0:${timestamp}:${rawBody}`
   const hmac = crypto
     .createHmac('sha256', signingSecret)
     .update(base)
