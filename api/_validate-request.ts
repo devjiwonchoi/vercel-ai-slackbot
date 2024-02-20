@@ -8,7 +8,7 @@ export async function isValidSlackRequest({
   rawBody,
 }: {
   request: Request
-  rawBody: any
+  rawBody: string
 }) {
   const timestamp = request.headers.get('X-Slack-Request-Timestamp')
   const slackSignature = request.headers.get('X-Slack-Signature')
